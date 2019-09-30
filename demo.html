@@ -21,7 +21,9 @@
   <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
   <!-- Theme CSS - Includes Bootstrap -->
+  <link href="css/creative.css" rel="stylesheet">
   <link href="css/demo.css" rel="stylesheet">
+  
 
 </head>
 
@@ -52,51 +54,46 @@
             <a class="nav-link js-scroll-trigger" href="clients.html">Clients</a>
           </li>
 		  <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="remarks.html">FAQ</a>
+            <a class="nav-link js-scroll-trigger" href="signup.html">FAQ</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   
-  
-  <div class="container-fluid">
-  <div class="row no-gutter">
-    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
-    <div class="col-md-8 col-lg-6">
-      <div class="login d-flex align-items-center py-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-9 col-lg-8 mx-auto">
-              <h3 class="login-heading mb-4">Welcome back!</h3>
-              <form>
-                <div class="form-label-group">
-                  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                  <label for="inputEmail">Email address</label>
-                </div>
+ <div id="login_div" class="main-div">
+    <h3>Login to your Account here!</h3>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" placeholder="Password..." id="password_field" />
 
-                <div class="form-label-group">
-                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                  <label for="inputPassword">Password</label>
-                </div>
+    <button onclick="login()">Login to Account</button>
+	<p></p>
+	<p align="center">or</p>
+	<a class="d-block text-center mt-2 small" href="signup.html">Back</a>
 
-                <div class="custom-control custom-checkbox mb-3">
-                  <input type="checkbox" class="custom-control-input" id="customCheck1">
-                  <label class="custom-control-label" for="customCheck1">Remember password</label>
-                </div>
-                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit" >Sign in</button>
-				
-                <div class="text-center">
-                 <a class="small" href="#">Forgot password?</a></div> 
-				 
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
   </div>
-</div>
+
+  <div id="user_div" class="loggedin-div">
+    <h3>Welcome User</h3>
+	<p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p></p>
+	<a class="d-block text-center mt-2 small" href="remarks.html">QUERIES ?</a>
+    
+	 <button onclick="logout()">Logout</button>
+	
+	
+	
+    
+  </div>
+
+
+
+
 
 
 
@@ -115,6 +112,26 @@
     </div>
   </footer>
 
+
+<script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyDxKB2Czj1VPI_yH8QloKq4lrv-9Jjtd0M",
+    authDomain: "gleamy-30042.firebaseapp.com",
+    databaseURL: "https://gleamy-30042.firebaseio.com",
+    projectId: "gleamy-30042",
+    storageBucket: "gleamy-30042.appspot.com",
+    messagingSenderId: "643180606419",
+    appId: "1:643180606419:web:9b34b39ccf6e019caa7526"
+  };
+  
+  firebase.initializeApp(firebaseConfig);
+  
+</script>
+
+
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -122,10 +139,13 @@
   <!-- Plugin JavaScript -->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
   <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
 
   <!-- Custom scripts for this template -->
-  <script src="js/creative.min.js"></script>
-
+  <script src="js/creative.min.js"></script> 
+  <script src="js/login.js"></script>
+  
 </body>
 
 </html>
